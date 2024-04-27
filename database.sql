@@ -10,7 +10,7 @@ CREATE TABLE "gallery" (
 INSERT INTO "gallery" 
 ("url", "title", "description")
 VALUES
-('images/goat_small.jpg', 'Goat!', 'Photo of a goat taken at Glacier National Park.'),
+('images/Vinny.jpg', 'Vinny, the Vizsla!', 'Photo of a dog named Vinny.'),
 ('images/market.JPG', 'Market in Guatemala!', 'Photo of an open air market in Guatemala.'),
 ('images/portugal.jpg', 'Portugal!', 'Photo of a sunset taken on the Azores islands in Portugal.'),
 ('images/pretzel.jpeg', 'Pretzel!', 'Photo of a delicious German soft pretzel.'),

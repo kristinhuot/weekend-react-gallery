@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'; 
 import axios from 'axios';
-
+import GalleryList from '../Gallery List/GalleryList';
 
 function App() {
 

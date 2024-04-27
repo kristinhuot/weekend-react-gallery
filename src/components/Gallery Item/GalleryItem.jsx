@@ -10,7 +10,7 @@ function GalleryItem ({photoGallery, fetchPhotoGallery}) {
         <span>
             <p>{photoGallery.title}</p>
             <img src = {photoGallery.url} width="200" height="200"/>
-            <button>Like</button>
+            <p><button>Like</button></p>
         </span>
 
 

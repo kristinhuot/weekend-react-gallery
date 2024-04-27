@@ -20,7 +20,7 @@ const likeButton = () => {
         <span data-testid="galleryItem">
             <p>{eachPhoto.title}</p>
             <img src = {eachPhoto.url} width="200" height="200"/>
-            <p><button onClick={likeButton} data-testid="like">Like</button></p>
+            <p><button onClick={likeButton} data-testid="like">Like</button> Like Count - {eachPhoto.likes}</p>
         </span>
 
 

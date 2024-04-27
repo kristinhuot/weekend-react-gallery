@@ -8,7 +8,18 @@ router.put('/like/:id', (req, res) => {
 
 // GET /gallery
 router.get('/', (req, res) => {
-  // code here
+  const sqlText = `
+    SELECT * FROM "gallery"
+    ORDER BY "id";
+  `
+  pool.query(sqlText)
+    .then((result) => {
+      res.send(result.rows); 
+    })
+    .catch((error) => {
+      console.log('Error making database query in GET route,', error);
+      res.sendStatus(500); 
+    })
 });
 
 module.exports = router;

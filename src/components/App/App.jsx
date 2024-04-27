@@ -16,7 +16,7 @@ function App() {
       url: '/api/gallery'
     })
     .then((response) => {
-      console.log('We got photo gallery:', response.data);
+      console.log('We got the photo gallery:', response.data);
       setPhotoGallery(response.data);
     })
     .catch((error) => {
@@ -32,12 +32,8 @@ function App() {
         </header>
 
         <p>The gallery goes here!</p>
-        <img src="images/goat_small.jpg" width="200" height="200"/>
-        <img src="images/market.JPG" width="200" height="200"/>
-        <img src="images/portugal.jpg" width="200" height="200"/>
-        <img src="images/pretzel.jpeg" width="200" height="200"/>
-        <img src="images/skiing.jpg" width="200" height="200"/>
-        <img src="images/tikal.JPG" width="200" height="200"/>
+        <GalleryList photoGallery= {photoGallery} fetchPhotoGallery = {fetchPhotoGallery}/>
+        
       </div>
     );
 }

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'; 
-import Axios from 'axios';
+import axios from 'axios';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   }, [])
 
   const fetchPhotoGallery = () => {
-    Axios({
+    axios({
       method: 'GET',
       url: '/api/gallery'
     })

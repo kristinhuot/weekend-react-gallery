@@ -6,19 +6,18 @@ function GalleryList({photoGallery, fetchPhotoGallery}) {
 
 
 return (
-    <>
-    {photoGallery.map((item) => {
 
-        console.log('item is:', item);
-        return (
-            < GalleryItem
-            item key = {item.id}
-            photoGallery = {item}
-            fetchPhotoGallery = {fetchPhotoGallery}
-            />
-        )
-    })}
-    </>
+    <span data-testid="galleryList">    
+        {photoGallery.map((each) => {
+            return (
+                < GalleryItem
+                item key = {each.id}
+                eachPhoto = {each}
+                fetchPhotoGallery = {fetchPhotoGallery}
+                />
+            )
+        })}
+   </span>
 )
 }
 

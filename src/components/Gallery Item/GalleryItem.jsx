@@ -1,16 +1,26 @@
+import axios from 'axios'
 
+function GalleryItem ({eachPhoto, fetchPhotoGallery}) {
 
-function GalleryItem ({photoGallery, fetchPhotoGallery}) {
-
-    console.log('photoGallery is:', photoGallery);
-    console.log('fetch Photo Gallery function is:', fetchPhotoGallery);
+const likeButton = () => {
+    axios({
+        method: 'PUT',
+        url: `/api/gallery/${eachPhoto.id}`
+    })
+    .then((response) => {
+        fetchPhotoGallery(); 
+    })
+    .catch((error)=> {
+        console.log('Like button error', error);
+    })
+}
 
     return (
 
-        <span>
-            <p>{photoGallery.title}</p>
-            <img src = {photoGallery.url} width="200" height="200"/>
-            <p><button>Like</button></p>
+        <span data-testid="galleryItem">
+            <p>{eachPhoto.title}</p>
+            <img src = {eachPhoto.url} width="200" height="200"/>
+            <p><button onClick={likeButton} data-testid="like">Like</button></p>
         </span>
 
 
@@ -24,10 +34,3 @@ function GalleryItem ({photoGallery, fetchPhotoGallery}) {
 export default GalleryItem
 
 
-
-{/* <img src="images/goat_small.jpg" width="200" height="200"/>
-<img src="images/market.JPG" width="200" height="200"/>
-<img src="images/portugal.jpg" width="200" height="200"/>
-<img src="images/pretzel.jpeg" width="200" height="200"/>
-<img src="images/skiing.jpg" width="200" height="200"/>
-<img src="images/tikal.JPG" width="200" height="200"/> */}

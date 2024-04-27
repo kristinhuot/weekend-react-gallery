@@ -3,7 +3,8 @@ CREATE TABLE "gallery" (
   "url" VARCHAR,
   "title" VARCHAR,
   "description" TEXT,
-  "likes" INTEGER DEFAULT 0
+  "likes" INTEGER DEFAULT 0,
+  "showDescription" BOOLEAN DEFAULT FALSE 
 );
 
 INSERT INTO "gallery" 

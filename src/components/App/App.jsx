@@ -33,7 +33,7 @@ function App() {
 
         <p>The gallery goes here!</p>
         <GalleryList photoGallery= {photoGallery} fetchPhotoGallery = {fetchPhotoGallery}/>
-        
+        <GalleryForm fetchPhotoGallery = {fetchPhotoGallery}/>
       </div>
     );
 }

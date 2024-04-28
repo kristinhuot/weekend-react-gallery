@@ -37,4 +37,45 @@ router.get('/', (req, res) => {
     })
 });
 
+// POST /gallery 
+
+router.post('/', (req, res) => {
+  const newGalleryItem = req.body;
+  const sqlText = `
+    INSERT INTO gallery
+    (url, title, description)
+    VALUES ($1, $2, $3);
+  `
+  pool.query(sqlText, [newGalleryItem.url, newGalleryItem.title, newGalleryItem.description])
+  .then((result) => {
+    res.sendStatus(201);
+  })
+  .catch((error) => {
+    console.log('Error in POST route', error);
+    res.sendStatus(500); 
+  })
+})
+
+// DELETE /gallery 
+
+router.delete('/:id', (req, res) => {
+  const sqlText = `
+    DELETE FROM "gallery"
+    WHERE "id" = $1;
+  `
+  const sqlValues = [req.params.id]
+
+  pool.query(sqlText, sqlValues)
+    .then((dbRes) => {
+      res.sendStatus(200)
+    })
+    .catch((dbErr) => {
+      console.log('Error in DELETE route', dbErr);
+      res.sendStatus(500)
+    })
+
+})
+
+
+
 module.exports = router;

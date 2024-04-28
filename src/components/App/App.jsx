@@ -1,6 +1,13 @@
 import {useState, useEffect} from 'react'; 
 import axios from 'axios';
 import GalleryList from '../Gallery List/GalleryList';
+import GalleryForm from '../Gallery Form/GalleryForm';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { Container } from '@mui/material';
+
 
 function App() {
 
@@ -27,13 +34,15 @@ function App() {
 
     return (
       <div data-testid="app">
+        <Container>
         <header>
           <h1>React Gallery</h1>
         </header>
-
-        <p>The gallery goes here!</p>
+       
+        <p>Add a new gallery item!</p>
+        <GalleryForm fetchPhotoGallery = {fetchPhotoGallery}/>
         <GalleryList photoGallery= {photoGallery} fetchPhotoGallery = {fetchPhotoGallery}/>
-        
+        </Container>
       </div>
     );
 }
